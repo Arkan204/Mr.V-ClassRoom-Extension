@@ -1,0 +1,15 @@
+/* 
+  styles.css — Mr.V Classroom Sync
+  Content script styles injected into classroom.google.com
+  (Badge & toast styles are injected dynamically via content.js)
+*/
+
+/* Prevent any layout conflicts with our injected badge */
+#agy-sync-badge {
+  all: initial;
+  font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+#agy-sync-badge * {
+  box-sizing: border-box !important;
+}

@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "Mr.V | Classroom Sync PRO",
+  "version": "2.0.0",
+  "description": "Mr.V Classroom Sync Engine — Auto-sync Google Classroom lectures, labs, and assignments into your organized study folders.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "downloads",
+    "cookies",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://classroom.google.com/*",
+    "https://*.googleusercontent.com/*",
+    "https://drive.google.com/*",
+    "https://drive.usercontent.google.com/*",
+    "https://docs.google.com/*",
+    "https://accounts.google.com/*",
+    "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://classroom.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}
